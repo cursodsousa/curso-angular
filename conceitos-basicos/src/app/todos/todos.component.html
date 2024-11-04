@@ -1,0 +1,24 @@
+<p>TODOS</p>
+<br />
+<form #todoForm="ngForm">    
+    <label for="inputDescription">Descrição:</label><br />
+    <input id="inputDescription" type="text" [(ngModel)]="todo.description" name="description" required /><br /><br />
+    <button (click)="adicionarTodo()">Adicionar</button>
+</form>
+
+<br />
+
+<table border="1">
+    <thead>
+        <td>Description</td>
+        <td>Concluído</td>
+        <td></td>
+    </thead>
+    <tbody>
+        <tr *ngFor="let t of todos">
+            <td>{{t.description}}</td>
+            <td>{{t.done ? 'SIM' : 'NÃO'}}</td>
+            <td><button (click)="finalizarTodo(t)">Finalizar</button></td>
+        </tr>
+    </tbody>
+</table>
