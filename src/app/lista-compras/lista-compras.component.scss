@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px #ccc;
+    padding: 20px 30px;
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #4b4949;
+}
+
+.add-item-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #007bff;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #0056b3;
+}
+
+button[type="submit"]{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: backgroud 0.3s;
+}
+
+button[type="submit"]:hover{
+    background: #0056b3;
+}
+
+button[type="button"]{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background: #d51f1f;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: backgroud 0.3s;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+thead{
+    background:  #007bff;
+    color: #fff;
+}
+
+th{
+    background:  #007bff;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+tr:nth-child(odd){
+    background-color: #f9f9f9;
+}
+
+tr:nth-child(even){
+    background-color: #e6f0ff;
+}
+
+input[type="checkbox"]{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.item-riscado {
+    text-decoration: line-through;
+}
