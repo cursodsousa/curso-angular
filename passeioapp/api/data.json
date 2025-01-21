@@ -1,0 +1,49 @@
+{
+  "categorias": [
+    {
+      "id": "1",
+      "nome": "Restaurantes",
+      "descricao": "Lugares para alimentação"
+    },
+    {
+      "id": "2",
+      "nome": "test",
+      "descricao": "test"
+    },
+    {
+      "id": "3",
+      "nome": "test",
+      "descricao": "test"
+    },
+    {
+      "id": "4",
+      "nome": "test",
+      "descricao": "test"
+    },
+    {
+      "id": "3b67",
+      "nome": "Restaurantes",
+      "descricao": "Lugares para comer e se divertir"
+    },
+    {
+      "id": "229a",
+      "nome": "teste",
+      "descricao": "teste"
+    },
+    {
+      "id": "9fa0",
+      "nome": "teste",
+      "descricao": "teste"
+    },
+    {
+      "id": "c43a",
+      "nome": "teste",
+      "descricao": "teste"
+    },
+    {
+      "id": "7604",
+      "nome": "ad",
+      "descricao": "ad"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+<div
+  *ngIf="message"
+  class="fixed top-4 right-4 z-50 max-w-sm w-full p-4 rounded-lg shadow-md flex items-center"
+  [ngClass]="{
+    'bg-green-100 text-green-700': type === 'success',
+    'bg-red-100 text-red-700': type === 'error'
+  }"
+>
+  <span class="mr-3 text-2xl">
+    {{ type === 'success' ? '✔️' : '❌' }}
+  </span>
+  <p class="flex-1 text-sm font-medium">{{ message }}</p>
+  <button (click)="close()" class="ml-3 text-lg text-gray-500 hover:text-gray-700">✖️</button>
+</div>

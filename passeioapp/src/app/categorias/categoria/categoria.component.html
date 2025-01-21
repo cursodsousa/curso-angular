@@ -1,0 +1,50 @@
+<app-messages #messages></app-messages>
+
+<div class="p-6 max-w-lg mx-auto bg-white shadow-lg rounded-lg mt-6">
+    <h2 class="text-2xl font-semibold text-gray-700 mb-4">Nova Categoria</h2>
+    <form id="categoryForm" [formGroup]="camposForm" (ngSubmit)="salvar();">
+      <!-- Nome da Categoria -->
+      <div class="mb-4">
+        <label for="categoryName" class="block text-gray-600 font-medium mb-2">Nome da Categoria</label>
+        <input 
+          type="text" 
+          id="nome" 
+          name="nome" 
+          formControlName="nome"
+          placeholder="Ex: Restaurantes, Praias, Shoppings" 
+          class="w-full p-3 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring focus:ring-blue-400"
+          required
+        />
+        <span class="text-red-500 text-sm" 
+              *ngIf="isCampoInvalido('nome', 'required')">
+            Campo obrigatório
+        </span>
+      </div>
+
+      <!-- Descrição da Categoria -->
+      <div class="mb-4">
+        <label for="categoryDescription" class="block text-gray-600 font-medium mb-2">Descrição</label>
+        <textarea 
+          id="descricao" 
+          name="descricao" 
+          formControlName="descricao"
+          placeholder="Descrição breve sobre a categoria"
+          rows="4" 
+          class="w-full p-3 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring focus:ring-blue-400"
+          required
+        ></textarea>
+        <span class="text-red-500 text-sm" 
+              *ngIf="isCampoInvalido('descricao', 'required')">
+            Campo obrigatório
+        </span>
+      </div>
+
+      <!-- Botão de Cadastro -->
+      <button 
+        type="submit" 
+        class="w-full bg-blue-600 text-white font-semibold p-3 rounded shadow hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-400"
+      >
+        Cadastrar Categoria
+      </button>
+    </form>
+  </div>
