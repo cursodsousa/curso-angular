@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Lugares</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-blue-500 to-blue-700 text-white p-6 shadow-lg">
+    <div class="text-center">
+      <h1 class="text-3xl font-bold">Cadastro de Lugares</h1>
+      <p class="text-lg mt-2">Adicione novos lugares à sua lista de favoritos</p>
+    </div>
+  </header>
+
+  <!-- Formulário -->
+  <div class="p-6 max-w-lg mx-auto bg-white shadow-lg rounded-lg mt-6">
+    <h2 class="text-2xl font-semibold text-gray-700 mb-4">Novo Lugar</h2>
+    <form id="placeForm">
+      <!-- Nome do Lugar -->
+      <div class="mb-4">
+        <label for="placeName" class="block text-gray-600 font-medium mb-2">Nome do Lugar</label>
+        <input 
+          type="text" 
+          id="placeName" 
+          name="placeName" 
+          placeholder="Ex: Praia do Sol, Restaurante Estrela" 
+          class="w-full p-3 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring focus:ring-blue-400"
+          required
+        />
+      </div>
+
+      <!-- Categoria -->
+      <div class="mb-4">
+        <label for="placeCategory" class="block text-gray-600 font-medium mb-2">Categoria</label>
+        <select 
+          id="placeCategory" 
+          name="placeCategory" 
+          class="w-full p-3 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring focus:ring-blue-400"
+          required
+        >
+          <option value="">Selecione uma categoria</option>
+          <option value="restaurantes">Restaurantes</option>
+          <option value="praias">Praias</option>
+          <option value="shoppings">Shoppings</option>
+          <option value="parques">Parques</option>
+        </select>
+      </div>
+
+      <!-- Localização -->
+      <div class="mb-4">
+        <label for="placeLocation" class="block text-gray-600 font-medium mb-2">Localização</label>
+        <input 
+          type="text" 
+          id="placeLocation" 
+          name="placeLocation" 
+          placeholder="Ex: São Paulo, SP" 
+          class="w-full p-3 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring focus:ring-blue-400"
+          required
+        />
+      </div>
+
+      <!-- URL da Foto -->
+      <div class="mb-4">
+        <label for="placeImage" class="block text-gray-600 font-medium mb-2">URL da Foto</label>
+        <input 
+          type="url" 
+          id="placeImage" 
+          name="placeImage" 
+          placeholder="Ex: https://exemplo.com/foto.jpg" 
+          class="w-full p-3 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring focus:ring-blue-400"
+          required
+        />
+      </div>
+
+      <!-- Avaliação -->
+      <div class="mb-4">
+        <label for="placeRating" class="block text-gray-600 font-medium mb-2">Avaliação</label>
+        <select 
+          id="placeRating" 
+          name="placeRating" 
+          class="w-full p-3 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring focus:ring-blue-400"
+          required
+        >
+          <option value="">Selecione uma avaliação</option>
+          <option value="1">1 - Ruim</option>
+          <option value="2">2 - Regular</option>
+          <option value="3">3 - Bom</option>
+          <option value="4">4 - Muito Bom</option>
+          <option value="5">5 - Excelente</option>
+        </select>
+      </div>
+
+      <!-- Botão de Cadastro -->
+      <button 
+        type="submit" 
+        class="w-full bg-blue-600 text-white font-semibold p-3 rounded shadow hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-400"
+      >
+        Cadastrar Lugar
+      </button>
+    </form>
+  </div>
+
+  <footer class="bg-gray-200 text-center p-4 mt-6">
+    <p class="text-gray-600 text-sm">© 2025 Cadastro de Lugares. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('placeForm');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const placeName = document.getElementById('placeName').value;
+      const placeCategory = document.getElementById('placeCategory').value;
+      const placeLocation = document.getElementById('placeLocation').value;
+      const placeImage = document.getElementById('placeImage').value;
+      const placeRating = document.getElementById('placeRating').value;
+
+      if (placeName && placeCategory && placeLocation && placeImage && placeRating) {
+        alert(`Lugar "${placeName}" cadastrado com sucesso!`);
+        form.reset();
+      } else {
+        alert('Por favor, preencha todos os campos!');
+      }
+    });
+  </script>
+</body>
+</html>

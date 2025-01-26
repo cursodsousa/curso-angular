@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Categorias</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-blue-500 to-blue-700 text-white p-6 shadow-lg">
+    <div class="text-center">
+      <h1 class="text-3xl font-bold">Cadastro de Categorias</h1>
+      <p class="text-lg mt-2">Adicione novas categorias para organizar seus lugares favoritos</p>
+    </div>
+  </header>
+
+  <!-- Formulário -->
+  <div class="p-6 max-w-lg mx-auto bg-white shadow-lg rounded-lg mt-6">
+    <h2 class="text-2xl font-semibold text-gray-700 mb-4">Nova Categoria</h2>
+    <form id="categoryForm">
+      <!-- Nome da Categoria -->
+      <div class="mb-4">
+        <label for="categoryName" class="block text-gray-600 font-medium mb-2">Nome da Categoria</label>
+        <input 
+          type="text" 
+          id="categoryName" 
+          name="categoryName" 
+          placeholder="Ex: Restaurantes, Praias, Shoppings" 
+          class="w-full p-3 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring focus:ring-blue-400"
+          required
+        />
+      </div>
+
+      <!-- Descrição da Categoria -->
+      <div class="mb-4">
+        <label for="categoryDescription" class="block text-gray-600 font-medium mb-2">Descrição</label>
+        <textarea 
+          id="categoryDescription" 
+          name="categoryDescription" 
+          placeholder="Descrição breve sobre a categoria"
+          rows="4" 
+          class="w-full p-3 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring focus:ring-blue-400"
+          required
+        ></textarea>
+      </div>
+
+      <!-- Botão de Cadastro -->
+      <button 
+        type="submit" 
+        class="w-full bg-blue-600 text-white font-semibold p-3 rounded shadow hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-400"
+      >
+        Cadastrar Categoria
+      </button>
+    </form>
+  </div>
+
+  <footer class="bg-gray-200 text-center p-4 mt-6">
+    <p class="text-gray-600 text-sm">© 2025 Cadastro de Categorias. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('categoryForm');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const categoryName = document.getElementById('categoryName').value;
+      const categoryDescription = document.getElementById('categoryDescription').value;
+
+      if (categoryName && categoryDescription) {
+        alert(`Categoria "${categoryName}" cadastrada com sucesso!`);
+        form.reset();
+      } else {
+        alert('Por favor, preencha todos os campos!');
+      }
+    });
+  </script>
+</body>
+</html>

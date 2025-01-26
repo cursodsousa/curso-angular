@@ -1,0 +1,37 @@
+<!-- Filtros -->
+<div class="p-4 bg-white shadow">
+    <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+        <!-- Barra de Pesquisa -->
+        <input 
+            type="text" 
+            placeholder="Pesquisar pelo nome do local..."  
+            class="w-full md:w-1/3 p-2 border border-gray-300 rounded shadow-sm focus:ring focus:ring-blue-400" 
+            id="searchBar"
+            />
+
+        <!-- Dropdown de Categoria -->
+        <select 
+            class="w-full md:w-1/4 p-2 border border-gray-300 rounded shadow-sm focus:ring focus:ring-blue-400" 
+            id="categoryDropdown"
+            >
+            <option [value]="">Todas as Categorias</option>
+            <option *ngFor="let cat of categoriasFiltro" [value]="cat.nome">{{ cat.nome }}</option>
+        </select>
+    </div>
+</div>
+
+    <!-- Lista de Lugares -->
+<div class="p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-6" id="placesList">
+    <div class="bg-white shadow rounded overflow-hidden" *ngFor="let lugar of lugares" >
+        <img [src]="lugar.urlFoto" [alt]="lugar.nome" class="w-full h-40 object-cover">
+        <div class="p-4">
+          <h2 class="text-lg font-semibold">{{ lugar.nome }}</h2>
+          <p class="text-gray-500">Categoria: <span class="text-blue-600">{{ lugar.categoria }}</span></p>
+          <p class="text-gray-500">Localização: {{ lugar.localizacao }}</p>
+          <div class="mt-2 flex items-center">
+            <span class="text-yellow-500">{{ getEstrelas(lugar) }}</span>
+            <span class="ml-2 text-gray-600">{{ lugar.avaliacao }}/5</span>
+          </div>
+        </div>
+      </div>
+</div>

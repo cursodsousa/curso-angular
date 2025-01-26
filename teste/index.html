@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Lugares Legais</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-blue-500 to-blue-700 text-white p-6 shadow-lg">
+    <div class="text-center">
+      <h1 class="text-3xl font-bold">Lista de Lugares Legais</h1>
+      <p class="text-lg mt-2">Descubra os melhores lugares para explorar e se divertir</p>
+    </div>
+  </header>
+  
+
+  <!-- Filtros -->
+  <div class="p-4 bg-white shadow">
+    <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+      <!-- Barra de Pesquisa -->
+      <input 
+        type="text" 
+        placeholder="Pesquisar pelo nome do local..."  
+        class="w-full md:w-1/3 p-2 border border-gray-300 rounded shadow-sm focus:ring focus:ring-blue-400" 
+        id="searchBar"
+      />
+
+      <!-- Dropdown de Categoria -->
+      <select 
+        class="w-full md:w-1/4 p-2 border border-gray-300 rounded shadow-sm focus:ring focus:ring-blue-400" 
+        id="categoryDropdown"
+      >
+        <option value="">Todas as Categorias</option>
+        <option value="restaurantes">Restaurantes</option>
+        <option value="praias">Praias</option>
+        <option value="shoppings">Shoppings</option>
+        <option value="parques">Parques</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Lista de Lugares -->
+  <div class="p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="placesList">
+    <!-- Lugares serão gerados dinamicamente -->
+  </div>
+
+  <footer class="bg-gray-200 text-center p-4 mt-4">
+    <p class="text-gray-600 text-sm">© 2025 Lista de Lugares Legais. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    const placesList = document.getElementById('placesList');
+    const searchBar = document.getElementById('searchBar');
+    const categoryDropdown = document.getElementById('categoryDropdown');
+
+    // Dados de exemplo de lugares
+    const places = [
+      {
+        name: 'Praia do Sol',
+        category: 'praias',
+        location: 'Florianópolis, SC',
+        image: 'https://via.placeholder.com/300',
+        rating: 4
+      },
+      {
+        name: 'Restaurante Sabor & Arte',
+        category: 'restaurantes',
+        location: 'São Paulo, SP',
+        image: 'https://via.placeholder.com/300',
+        rating: 5
+      },
+      {
+        name: 'Shopping Iguatemi',
+        category: 'shoppings',
+        location: 'Porto Alegre, RS',
+        image: 'https://via.placeholder.com/300',
+        rating: 4
+      },
+      {
+        name: 'Parque Ibirapuera',
+        category: 'parques',
+        location: 'São Paulo, SP',
+        image: 'https://via.placeholder.com/300',
+        rating: 5
+      },
+      {
+        name: 'Praia de Copacabana',
+        category: 'praias',
+        location: 'Rio de Janeiro, RJ',
+        image: 'https://via.placeholder.com/300',
+        rating: 5
+      },
+    ];
+
+    // Função para renderizar os lugares
+    function renderPlaces(filteredPlaces = places) {
+      placesList.innerHTML = '';
+
+      filteredPlaces.forEach(place => {
+        const stars = '★'.repeat(place.rating) + '☆'.repeat(5 - place.rating);
+
+        const placeHTML = `
+          <div class="bg-white shadow rounded overflow-hidden">
+            <img src="${place.image}" alt="${place.name}" class="w-full h-40 object-cover">
+            <div class="p-4">
+              <h2 class="text-lg font-semibold">${place.name}</h2>
+              <p class="text-gray-500">Categoria: <span class="text-blue-600">${capitalize(place.category)}</span></p>
+              <p class="text-gray-500">Localização: ${place.location}</p>
+              <div class="mt-2 flex items-center">
+                <span class="text-yellow-500">${stars}</span>
+                <span class="ml-2 text-gray-600">${place.rating}/5</span>
+              </div>
+            </div>
+          </div>
+        `;
+
+        placesList.insertAdjacentHTML('beforeend', placeHTML);
+      });
+    }
+
+    // Função para filtrar os lugares
+    function filterPlaces() {
+      const searchText = searchBar.value.toLowerCase();
+      const selectedCategory = categoryDropdown.value;
+
+      const filteredPlaces = places.filter(place => {
+        const matchesName = place.name.toLowerCase().includes(searchText);
+        const matchesCategory = selectedCategory === '' || place.category === selectedCategory;
+
+        return matchesName && matchesCategory;
+      });
+
+      renderPlaces(filteredPlaces);
+    }
+
+    // Função para capitalizar palavras
+    function capitalize(str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    // Eventos para filtro
+    searchBar.addEventListener('input', filterPlaces);
+    categoryDropdown.addEventListener('change', filterPlaces);
+
+    // Renderizar lugares inicialmente
+    renderPlaces();
+  </script>
+</body>
+</html>

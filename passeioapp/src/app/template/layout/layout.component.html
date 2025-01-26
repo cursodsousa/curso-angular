@@ -3,6 +3,24 @@
       <h1 class="text-3xl font-bold">{{ titulo }}</h1>
       <p class="text-lg mt-2">{{ subTitulo }}</p>
     </div>
+
+    <div class="mt-4">
+      <hr class="border-t border-blue-300 opacity-50">
+    </div>
+
+    <nav class="mt-4">
+      <ul class="flex justify-center space-x-6 text-white font-semibold">
+        <li>
+          <a routerLink="/paginas/galeria" class="hover:text-yellow-300">Galeria</a>
+        </li>
+        <li>
+          <a routerLink="/paginas/categorias" class="hover:text-yellow-300">Categorias</a>
+        </li>
+        <li>
+          <a routerLink="/paginas/lugares" class="hover:text-yellow-300">Lugares</a>
+        </li>
+      </ul>
+    </nav>
   </header>
 
   <router-outlet></router-outlet>

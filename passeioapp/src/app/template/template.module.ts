@@ -11,8 +11,7 @@ import { LayoutComponent } from './layout/layout.component';
   ],
   imports: [
     CommonModule,
-    TemplateRoutingModule,
-    
+    TemplateRoutingModule,    
   ]
 })
 export class TemplateModule { }

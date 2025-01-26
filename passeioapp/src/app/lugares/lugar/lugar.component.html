@@ -1,0 +1,90 @@
+<app-messages #messages></app-messages>
+
+<div class="p-6 max-w-lg mx-auto bg-white shadow-lg rounded-lg mt-6">
+    <h2 class="text-2xl font-semibold text-gray-700 mb-4">Novo Lugar</h2>
+    <form id="placeForm" [formGroup]="camposForm" (ngSubmit)="salvar()">
+      <!-- Nome do Lugar -->
+      <div class="mb-4">
+        <label for="planomeceName" class="block text-gray-600 font-medium mb-2">Nome do Lugar</label>
+        <input 
+          type="text" 
+          id="nome" 
+          name="nome" 
+          formControlName="nome"
+          placeholder="Ex: Praia do Sol, Restaurante Estrela" 
+          class="w-full p-3 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring focus:ring-blue-400"
+          required
+        />
+      </div>
+
+      <!-- Categoria -->
+      <div class="mb-4">
+        <label for="categoria" class="block text-gray-600 font-medium mb-2">Categoria</label>
+        <select 
+          id="categoria" 
+          name="categoria" 
+          class="w-full p-3 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring focus:ring-blue-400"
+          required
+          formControlName="categoria"
+        >
+          <option [value]="">Selecione uma categoria</option>
+          <option *ngFor="let cat of categorias" [value]="cat.nome">{{ cat.nome }}</option>
+        </select>
+      </div>
+
+      <!-- Localização -->
+      <div class="mb-4">
+        <label for="placeLocation" class="block text-gray-600 font-medium mb-2">Localização</label>
+        <input 
+          type="text" 
+          id="localizacao" 
+          name="localizacao" 
+          formControlName="localizacao"
+          placeholder="Ex: São Paulo, SP" 
+          class="w-full p-3 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring focus:ring-blue-400"
+          required
+        />
+      </div>
+
+      <!-- URL da Foto -->
+      <div class="mb-4">
+        <label for="urlFoto" class="block text-gray-600 font-medium mb-2">URL da Foto</label>
+        <input 
+          type="text" 
+          id="urlFoto" 
+          name="urlFoto" 
+          formControlName="urlFoto"
+          placeholder="Ex: https://exemplo.com/foto.jpg" 
+          class="w-full p-3 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring focus:ring-blue-400"
+          required
+        />
+      </div>
+
+      <!-- Avaliação -->
+      <div class="mb-4">
+        <label for="placeRating" class="block text-gray-600 font-medium mb-2">Avaliação</label>
+        <select 
+          id="avaliacao" 
+          name="avaliacao" 
+          formControlName="avaliacao"
+          class="w-full p-3 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring focus:ring-blue-400"
+          required
+        >
+          <option [value]="">Selecione uma avaliação</option>
+          <option [value]="1">1 - Ruim</option>
+          <option [value]="2">2 - Regular</option>
+          <option [value]="3">3 - Bom</option>
+          <option [value]="4">4 - Muito Bom</option>
+          <option [value]="5">5 - Excelente</option>
+        </select>
+      </div>
+
+      <!-- Botão de Cadastro -->
+      <button 
+        type="submit" 
+        class="w-full bg-blue-600 text-white font-semibold p-3 rounded shadow hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-400"
+      >
+        Cadastrar Lugar
+      </button>
+    </form>
+  </div>
