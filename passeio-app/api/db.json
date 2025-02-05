@@ -1,0 +1,24 @@
+{
+  "categorias": [
+    {
+      "id": "2",
+      "nome": "Shoppings",
+      "descricao": "Lugares para fazer compras e passear"
+    },
+    {
+      "id": "1ed9",
+      "nome": "Praias",
+      "descricao": "Lugares para tomar banho com a familia"
+    },
+    {
+      "id": "31ca",
+      "nome": "Teste",
+      "descricao": "teste"
+    },
+    {
+      "id": "3dd7",
+      "nome": "teste 2",
+      "descricao": "teste 2"
+    }
+  ]
+}
