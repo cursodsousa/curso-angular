@@ -12,13 +12,39 @@
     },
     {
       "id": "31ca",
-      "nome": "Teste",
+      "nome": "Bares",
       "descricao": "teste"
     },
     {
       "id": "3dd7",
-      "nome": "teste 2",
+      "nome": "Parques",
       "descricao": "teste 2"
+    }
+  ],
+  "lugares": [
+    {
+      "id": "6f95",
+      "nome": "Praia do zé",
+      "categoria": "Praias",
+      "localizacao": "Rio de Janeiro",
+      "urlFoto": "teste",
+      "avaliacao": "4"
+    },
+    {
+      "id": "04e9",
+      "nome": "Praia do Espelho",
+      "categoria": "Praias",
+      "localizacao": "Bahia",
+      "urlFoto": "https://www.melhoresdestinos.com.br/wp-content/uploads/2019/01/melhores-praias-do-brasil-praia-do-espelho-820x547.jpg",
+      "avaliacao": "5"
+    },
+    {
+      "id": "5057",
+      "nome": "Parque Ibirapuera",
+      "categoria": "Parques",
+      "localizacao": "São Paulo",
+      "urlFoto": "https://parqueibirapuera.org/wp/wp-content/uploads/2016/03/RN-Ibirapuera-Aerea-20150121-5-1-foto-destacada-resized.jpg",
+      "avaliacao": "4"
     }
   ]
 }
