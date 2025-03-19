@@ -24,6 +24,14 @@
   "lugares": [
     {
       "id": "6f95",
+      "nome": "Bar do zé",
+      "categoria": "Praias",
+      "localizacao": "Rio de Janeiro",
+      "urlFoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX6BKTqW4FCh278BcBxivD1kwAUfdxDxzqRw&s",
+      "avaliacao": "4"
+    },
+    {
+      "id": "6f95",
       "nome": "Praia do zé",
       "categoria": "Praias",
       "localizacao": "Rio de Janeiro",

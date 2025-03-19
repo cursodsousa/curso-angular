@@ -1,0 +1,34 @@
+{
+  "categorias": [
+    {
+      "id": "2",
+      "nome": "Shoppings",
+      "descricao": "Lugares para fazer compras e passear"
+    },
+    {
+      "id": "1ed9",
+      "nome": "Praias",
+      "descricao": "Lugares para tomar banho com a familia"
+    },
+    {
+      "id": "31ca",
+      "nome": "Bares",
+      "descricao": "teste"
+    },
+    {
+      "id": "3dd7",
+      "nome": "Parques",
+      "descricao": "teste 2"
+    }
+  ],
+  "lugares": [
+    {
+      "id": "6f95",
+      "nome": "Praia do Encanto",
+      "categoria": "Praias",
+      "localizacao": "Rio de Janeiro",
+      "urlFoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX6BKTqW4FCh278BcBxivD1kwAUfdxDxzqRw&s",
+      "avaliacao": "4"
+    }
+  ]
+}

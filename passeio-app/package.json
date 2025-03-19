@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "server": "json-server ./api/db.json"
+    "server": "json-server ./api/db.json",
+    "server:production": "json-server ./api/db.production.json --port 4000"
   },
   "private": true,
   "dependencies": {
